@@ -1,0 +1,21 @@
+To Do:
+	Positive oxygen purchases only
+	Classes for types of oxygen
+	Class for potential finds per locations
+	Event log include store transactions
+	Better solution for items classes / messages?
+	Timestamps for log
+
+
+Version 0.1.2:
+	Added a 5 entry log for ventures only
+	Started a moonitems class to keep track
+	Limited click of venture to 1 by changing toggle(showorhide) to toggle with no duration
+
+
+Version 0.1.1:
+	Added timer for countdown
+	Added ability to purchase oxygen
+	Prevented further ventures when out of oxygen
+	
+
