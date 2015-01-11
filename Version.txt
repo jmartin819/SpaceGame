@@ -1,10 +1,6 @@
 To Do:
-	Positive oxygen purchases only
-	Classes for types of oxygen
-	Class for potential finds per locations
-	Event log include store transactions
-	Better solution for items classes / messages?
-	Timestamps for log
+	Fix all SQL calls using the base.php structure (registration etc.)
+	Use database values for variables, import and export them
 
 
 Version 0.1.2:
