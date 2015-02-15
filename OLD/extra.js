@@ -21,6 +21,7 @@ $(document).ready(function(){
 			$("#Points").html("Points: " + points);
 			$("#Gold").html("Gold: " + gold);
 			$("#Oxygen").html("Oxygen: " + oxygen);
+			$("#realOxygen").html("realOxygen: " + oxygen);
 			$("#Result").delay(3000).fadeOut();
 			waitTimer();
 		}

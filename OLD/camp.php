@@ -16,7 +16,7 @@
 
 <?php
 
-mysql_select_db($INVname) or die("MySQL Error: " . mysql_error());
+//mysql_select_db($INVname) or die("MySQL Error: " . mysql_error());
 
 $theUser = $_SESSION['Username'];
 
@@ -37,27 +37,10 @@ while($row = mysql_fetch_array( $result )) {
 } 
 echo "</table>";
 
-/*$result = mysql_query('SELECT * FROM oxygen', $INVdb) or die("MySQL Error2: " . mysql_error());
-
-echo "<table border='1' id='mytable'>";
-echo "<tr> <th>user</th> <th>oxygen</th> <th>compoxy</th> </tr>";
-// keeps getting the next row until there are no more to get
-while($row = mysql_fetch_array( $result )) {
-    //Print out the contents of each row into a table
-	echo "<tr><td>"; 
-	echo $row['Username'];
-	echo "</td><td>"; 
-	echo $row['Oxygen'];
-	echo "</td><td>"; 
-	echo $row['CompressedOxygen'];
-	echo "</td></tr>"; 
-} 
-echo "</table>";
+/*
 
 mysql_select_db($USERname) or die("MySQL Error: " . mysql_error());
 $result2 = mysql_query('SELECT * FROM users', $USERdb) or die("MySQL Error2: " . mysql_error());
-
-
 echo "<table border='1' id='mytable2'>";
 echo "<tr> <th>userid</th> <th>name</th> <th>password</th> <th>email</th></tr>";
 // keeps getting the next row until there are no more to get
@@ -87,12 +70,20 @@ echo '<div id="parentDiv">';
 		echo '</div>';
 		echo '<div id="Info">';
 
+			//Pull inventory for specific user
 			$query = "SELECT * FROM oxygen WHERE Username='$theUser'";
-			$result = mysql_query($query, $INVdb) or die("MySQL Error2: " . mysql_error());
-			$row = mysql_fetch_array( $result );
-			echo '<span id="realOxygen">realOxygen:';
-			echo $row['Oxygen'];
-			echo '</span><br>';
+			$result = mysql_query($query, $INVdb) or die("MySQL Error in inventory query: " . mysql_error());
+			$row = mysql_fetch_array($result);
+			echo '<span id="realOxygen" class="label-' . $row['Oxygen'] .'">realOxygen: ' . $row['Oxygen'] . '</span><br>';
+			echo '<span id="realCompOxygen" class="label-' . $row['CompressedOxygen'] .'">realCompressedOxygen: ' . $row['CompressedOxygen'] . '</span><br>';
+
+			//Pull stats for specific user
+			$statquery = "SELECT * FROM general_stats";
+			$statresult = mysql_query($statquery, $STATdb) or die("MySQL Error in stat query: " . mysql_error());
+			$statrow = mysql_fetch_array($statresult);
+			echo '<span id="realPoints" class="label-' . $statrow['points'] .'">realPoints: ' . $statrow['points'] . '</span><br>';
+			echo '<span id="realGold" class="label-' . $statrow['gold'] .'">realGold: ' . $statrow['gold'] . '</span><br>';
+			echo '<span id="realVentures" class="label-' . $statrow['ventures'] .'">realVentures: ' . $statrow['ventures'] . '</span><br>';
 
 			echo '<span id="Points">Points: 0</span><br>';
 			echo '<span id="Gold">Gold: 0</span><br>';

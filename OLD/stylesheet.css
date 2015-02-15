@@ -10,13 +10,13 @@ html {
 	overflow:auto;
 }
 #Orange {
-    height: 50px;
-    width: 100px;
-    display: inline-block;
-    border-radius: 5px;
-    background-color: #F38630;
-    display: table-cell;
-    vertical-align: middle;
+  height: 50px;
+  width: 100px;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #F38630;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #Info {
@@ -29,8 +29,8 @@ html {
 }
 
 #sidebar {
-    min-width:200px;
-    background-color:grey;
+  min-width:200px;
+  background-color:grey;
 	display: table-cell;
 	padding-right: 5px;
 }
@@ -53,19 +53,15 @@ h1 {
 }
 
 #currentUser {
-    position: absolute;
-    right: 0px;
-    color: white;
+  position: absolute;
+  right: 0px;
+  color: white;
 }
 
 #mylogout {
-    color:white;
-}
-
-#mytable {
   color:white;
 }
 
-#mytable2 {
+#mytable {
   color:white;
 }

@@ -19,6 +19,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 
      <h1>Member Area</h1>
      <a id="camp" href="camp.php"> Camp </a>
+     <a id="camp" href="data.php"> TestingArea </a>
      <p>Thanks for logging in! You are <code><?=$_SESSION['Username']?></code> and your email address is <code><?=$_SESSION['EmailAddress']?></code>.</p>
       
      <?php
